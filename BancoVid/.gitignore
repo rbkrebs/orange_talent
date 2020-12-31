@@ -31,3 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+### Arquivos e figuras do artigo ###
+
+.dependencias.png
+.spring-boot-site.png
+.Artigo.odt
