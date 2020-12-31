@@ -6,24 +6,24 @@
 <body>
 <div layout:fragment="main">
     <h1>Cadastro de Cliente</h1>
-<form>
+<form th:action="@{/cliente/save}" th:object="${clienteCivil}" method="post">
     <div class="form-group">
-        <label for="exampleInputEmail1">Nome</label>
-        <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Digite seu nome">
+        <label for="inputName">Nome</label>
+        <input th:field="*{nome}" type="text" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Digite seu nome">
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+        <label for="inputEmail">Email address</label>
+        <input th:field="*{email}" type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
         <small id="emailHelp" class="form-text text-muted">Nós nunca compartilharemos seu e-mail</small>
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="text" class="form-control" id="inputCPF" aria-describedby="cpfHelp" placeholder="Informe seu CPF">
+        <label for="inputCPF">CPF</label>
+        <input th:field="*{cpf}" type="text" class="form-control" id="inputCPF" aria-describedby="cpfHelp" placeholder="Informe seu CPF">
         <small id="cpfHelp" class="form-text text-muted">Nós nunca compartilharemos seu CPF</small>
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">Data de Nascimento</label>
-        <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <label for="inputDataNascimento">Data de Nascimento</label>
+        <input th:field="*{dataNascimento}" type="date" class="form-control" id="inputDataNascimento" aria-describedby="emailHelp">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
