@@ -34,7 +34,4 @@ build/
 
 
 ### Arquivos e figuras do artigo ###
-
-.dependencias.png
-.spring-boot-site.png
-.Artigo.odt
+/assets/
