@@ -5,13 +5,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.IllegalFormatException;
+import java.time.LocalDate;
 
 
 @Data
@@ -19,8 +17,8 @@ import java.util.IllegalFormatException;
 @NoArgsConstructor
 public class ClienteCivilDTO {
 
-    private static final DateTimeFormatter formatter =
-            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+    /*private static final DateTimeFormatter formatter =
+            DateTimeFormatter.ofPattern("dd-MM-yyyy");*/
 
     private String nome;
 
@@ -32,8 +30,9 @@ public class ClienteCivilDTO {
     private String cpf;
 
     @NotNull
-    private String dataNascimento;
-
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate dataNascimento;
+/*
     @JsonIgnore
     public LocalDateTime getDataNacimentoConverted() throws IllegalFormatException{
 
@@ -42,6 +41,6 @@ public class ClienteCivilDTO {
         }catch (Exception e){
             throw new IllegalArgumentException(ClienteCivilException.FORMATED_DATA);
         }
-    }
+    }*/
 
 }
