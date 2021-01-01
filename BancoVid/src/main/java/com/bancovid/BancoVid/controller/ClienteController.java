@@ -2,7 +2,7 @@ package com.bancovid.BancoVid.controller;
 
 
 
-import com.bancovid.BancoVid.domain.ClienteCivil;
+import com.bancovid.BancoVid.dto.ClienteCivilDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,20 +15,20 @@ public class ClienteController {
 
 
     @GetMapping("/")
-    public String clienteForm(ClienteCivil cliente){
+    public String clienteForm(ClienteCivilDTO cliente){
         return "index";
     }
 
     @PostMapping("/save")
-    public String clienteSave(ClienteCivil cliente){
+    public String clienteSave(ClienteCivilDTO cliente){
 
         return "redirect:clientesList";
     }
 
     @ModelAttribute("clienteCivil")
-    public ClienteCivil clienteCivil(){
+    public ClienteCivilDTO clienteCivil(){
 
-        ClienteCivil clienteCivil = new ClienteCivil();
+        ClienteCivilDTO clienteCivil = new ClienteCivilDTO();
         return clienteCivil;
     }
 

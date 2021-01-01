@@ -11,3 +11,5 @@ https://www.baeldung.com/spring-boot-bean-validation
 https://emmanuelneri.com.br/2014/08/07/mapeando-unique-constraint/
 
 https://www.baeldung.com/mapstruct
+
+https://www.baeldung.com/javax-validation
