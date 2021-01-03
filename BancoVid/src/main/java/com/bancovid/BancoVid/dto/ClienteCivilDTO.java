@@ -10,6 +10,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.IllegalFormatException;
 
 
 @Data
@@ -17,8 +19,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class ClienteCivilDTO {
 
-    /*private static final DateTimeFormatter formatter =
-            DateTimeFormatter.ofPattern("dd-MM-yyyy");*/
+    private static final DateTimeFormatter formatter =
+            DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
     private String nome;
 
@@ -28,19 +30,22 @@ public class ClienteCivilDTO {
 
     @NotNull
     private String cpf;
-
+    /*
     @NotNull
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    private LocalDate dataNascimento;
-/*
+    private LocalDate dataNascimento;*/
+
+    @NotNull
+    private String dataNascimento;
+
     @JsonIgnore
-    public LocalDateTime getDataNacimentoConverted() throws IllegalFormatException{
+    public LocalDate getDataNacimentoConverted() throws IllegalFormatException {
 
         try{
-            return LocalDateTime.parse(this.dataNascimento,formatter);
+            return LocalDate.parse(this.dataNascimento,formatter);
         }catch (Exception e){
             throw new IllegalArgumentException(ClienteCivilException.FORMATED_DATA);
         }
-    }*/
+    }
 
 }

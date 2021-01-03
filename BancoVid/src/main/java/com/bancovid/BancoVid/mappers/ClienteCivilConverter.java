@@ -1,5 +1,6 @@
 package com.bancovid.BancoVid.mappers;
 
+import com.bancovid.BancoVid.domain.CPF;
 import com.bancovid.BancoVid.domain.ClienteCivil;
 import com.bancovid.BancoVid.dto.ClienteCivilDTO;
 import org.springframework.stereotype.Component;
@@ -23,15 +24,12 @@ public class ClienteCivilConverter implements ClienteCivilMapper{
     public ClienteCivil DTOToModel(ClienteCivilDTO clienteCivilDTO) {
 
         ClienteCivil clienteCivil = new ClienteCivil();
-        Matcher m = p.matcher(clienteCivilDTO.getCpf());
 
-        if(m.find()){
-            clienteCivil.setCpf(String.join("",clienteCivilDTO.getCpf().split(delimiters)));
-        }
+        clienteCivil.setCpf(CPF.covertCpf(clienteCivilDTO.getCpf()));
 
         clienteCivil.setEmail(clienteCivilDTO.getEmail());
         clienteCivil.setNome(clienteCivilDTO.getNome());
-        clienteCivil.setDataNascimento(clienteCivilDTO.getDataNascimento());
+        clienteCivil.setDataNascimento(clienteCivilDTO.getDataNacimentoConverted());
 
 
         return clienteCivil;

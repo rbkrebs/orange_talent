@@ -13,3 +13,5 @@ https://emmanuelneri.com.br/2014/08/07/mapeando-unique-constraint/
 https://www.baeldung.com/mapstruct
 
 https://www.baeldung.com/javax-validation
+
+https://devqa.io/extract-numbers-string-java-regular-expressions/

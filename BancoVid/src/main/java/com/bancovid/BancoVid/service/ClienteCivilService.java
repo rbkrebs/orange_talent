@@ -1,12 +1,13 @@
 package com.bancovid.BancoVid.service;
 
 import com.bancovid.BancoVid.domain.ClienteCivil;
+import com.bancovid.BancoVid.exceptions.ClienteCivilException;
 import com.bancovid.BancoVid.mappers.ClienteCivilConverter;
-import com.bancovid.BancoVid.mappers.ClienteCivilMapper;
 import com.bancovid.BancoVid.repository.ClienteCivilRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLException;
 import java.util.Optional;
 
 
@@ -20,12 +21,12 @@ public class ClienteCivilService implements EntityService<ClienteCivil>{
     private ClienteCivilConverter clienteCivilConverter;
 
     @Override
-    public Boolean salvar(ClienteCivil clienteCivil) {
+    public ClienteCivil salvar(ClienteCivil clienteCivil) throws SQLException {
         try{
-            cvrepository.save(clienteCivil);
-            return true;
+
+            return cvrepository.save(clienteCivil);
         }catch (Exception e){
-            return false;
+            throw new SQLException(ClienteCivilException.REPEATED_REGISTRATION);
         }
 
 

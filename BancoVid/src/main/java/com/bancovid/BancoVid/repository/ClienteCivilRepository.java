@@ -13,4 +13,6 @@ public interface ClienteCivilRepository extends JpaRepository<ClienteCivil, Long
     ClienteCivil findClienteCivilByCpf(long cpf);
 
     ClienteCivil findClienteCivilByEmail(String email);
+
+    ClienteCivil save(ClienteCivil clienteCivil);
 }

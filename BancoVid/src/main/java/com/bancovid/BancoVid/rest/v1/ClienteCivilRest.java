@@ -6,9 +6,11 @@ import com.bancovid.BancoVid.dto.ClienteCivilDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -33,9 +35,9 @@ public class ClienteCivilRest {
     @PostMapping("/cliente")
     @ApiOperation(value = "Cria um registro de cliente civil")
     public ClienteCivilDTO create(
-            @Validated @RequestBody ClienteCivilDTO clienteCivilDTO) {
+            @Valid @RequestBody ClienteCivilDTO clienteCivilDTO) throws Exception {
 
-        return null;//this.pautaController.salvar(pauta).get();
+        return this.clienteController.clienteSave(clienteCivilDTO);
 
     }
 }

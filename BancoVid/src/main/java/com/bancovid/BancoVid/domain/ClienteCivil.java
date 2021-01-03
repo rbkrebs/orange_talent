@@ -28,6 +28,6 @@ public class ClienteCivil extends Cliente{
     private LocalDate dataNascimento;
 
     @Size(max = 11, min = 11, message = "O valor não condiz com um cpf válido")
-    @Column(name = "cpf", unique = true)
+    @Column(name = "cpf_uk", unique = true)
     private String cpf;
 }
