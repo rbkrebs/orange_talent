@@ -9,6 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
@@ -27,6 +28,7 @@ public class ClienteCivil extends Cliente{
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     private LocalDate dataNascimento;
 
+    @NotBlank
     @Size(max = 11, min = 11, message = "O valor não condiz com um cpf válido")
     @Column(name = "cpf_uk", unique = true)
     private String cpf;

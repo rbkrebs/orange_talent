@@ -28,7 +28,7 @@ public class CPF {
             return String.join("",cpf.split(delimiters));
         }
 
-        throw new IllegalArgumentException(ClienteCivilException.FORMATED_DATA);
+        throw new IllegalArgumentException(ClienteCivilException.FORMATED_CPF);
 
     }
 

@@ -6,6 +6,8 @@ import java.util.Optional;
 
 public interface EntityService<T> {
 
-    ClienteCivil salvar(T t) throws Exception;
-    Optional<T> validar(T t);
+    ClienteCivil salvar(T t);
+    boolean ehcpfRepetido(String cpf);
+    boolean ehemailRepetido(String email);
+
 }

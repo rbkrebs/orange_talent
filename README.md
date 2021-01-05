@@ -15,3 +15,9 @@ https://www.baeldung.com/mapstruct
 https://www.baeldung.com/javax-validation
 
 https://devqa.io/extract-numbers-string-java-regular-expressions/
+
+https://mkyong.com/spring-boot/spring-rest-validation-example/
+
+https://www.baeldung.com/javax-validation
+
+https://www.baeldung.com/global-error-handler-in-a-spring-rest-api
